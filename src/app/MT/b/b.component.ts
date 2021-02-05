@@ -7,12 +7,13 @@ import { BridgeService } from 'src/app/share/bridge.service';
   styleUrls: ['./b.component.css']
 })
 export class BComponent implements OnInit {
-  num:any;
-  constructor( private bServ: BridgeService ) { }
+  num: any;
+  constructor(private bServ: BridgeService) { }
 
   ngOnInit(): void {
-    this.bServ.share.subscribe(x=>{
-      this.num = x;
+    this.bServ.share.subscribe(x => {
+      this.num = !isNaN(x) ?  x : ''
+      // this.num = x;
     })
   }
 

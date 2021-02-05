@@ -7,7 +7,7 @@ export class BridgeService {
   private content = new Subject<any>();
   public share = this.content.asObservable();
   constructor() { }
-  
+
   updateData(num: Number) {
     this.content.next(num);
   }
