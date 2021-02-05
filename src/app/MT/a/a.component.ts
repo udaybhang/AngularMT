@@ -12,6 +12,10 @@ export class AComponent implements OnInit {
   updateVal(data: any) {
     this.num = parseInt(data) + 1;
     this.bServ.updateData(this.num);
+    // var value = parseInt(document.getElementById('num').value, 10);
+    // value = isNaN(value) ? 0 : value;
+    //  value++;
+    //  document.getElementById('num').value = value;
   }
 
   ngOnInit(): void {
