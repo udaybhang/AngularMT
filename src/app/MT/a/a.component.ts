@@ -7,15 +7,19 @@ import { BridgeService } from 'src/app/share/bridge.service';
   styleUrls: ['./a.component.css']
 })
 export class AComponent implements OnInit {
-  num: Number = 0;
+  // num: Number = 0;
+  updatedVal: any = 0;
+  findData: any;
   constructor(private bServ: BridgeService) { }
+  setReset(k:any) {
+    this.findData = k;
+  }
   updateVal(data: any) {
-    this.num = parseInt(data) + 1;
-    this.bServ.updateData(this.num);
-    // var value = parseInt(document.getElementById('num').value, 10);
-    // value = isNaN(value) ? 0 : value;
-    //  value++;
-    //  document.getElementById('num').value = value;
+    if(this.updatedVal <= 0) {
+      this.findData = data;
+    }
+    this.findData = parseInt(this.findData) + 1;
+    this.bServ.updateData(this.findData);
   }
 
   ngOnInit(): void {

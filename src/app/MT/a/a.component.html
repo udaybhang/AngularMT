@@ -38,8 +38,8 @@
   <div>
     <form>
       <label for="num">Enter Number in A </label>
-      <input type="number" ngModel id="num" name="num" #num placeholder="Enter number..">
-
+      <input type="number" [(ngModel)]="findData" id="num"  (change)="setReset(num.value)"
+      name="num" #num  placeholder="Enter number..">
     </form>
     <button type="button" value="Click" (click)="updateVal(num.value)"> Click to Send</button>
   </div>
